@@ -7,7 +7,27 @@
     <title>work-vite-1</title>
   </head>
   <body>
-    <div id="app"></div>
+    <!-- <div id="app"></div> -->
+    <div id="app">
+      <input
+        class="search-inp"
+        type="text"
+        id="search"
+        placeholder="Пошук користувача..."
+      />
+      <form class="forma" id="addUserForm">
+        <input
+          class="userName"
+          type="text"
+          id="newUserName"
+          placeholder="Ім'я користувача"
+          required
+        />
+        <button class="btn" type="submit">Додати користувача</button>
+      </form>
+      <div id="userList"></div>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -1,4 +1,7 @@
-import { userName } from "./userName";
-export function foo(name) {
-  return `<ul>${userName.map((user) => `<li>${user}</li>`).join("")}</ul>`;
+import { users } from "./userName";
+export function renderUsers(filteredUsers = users) {
+  const userList = document.querySelector("#userList");
+  userList.innerHTML = `<ul>${filteredUsers
+    .map((u) => `<li>${u}</li>`)
+    .join("")}</ul>`;
 }

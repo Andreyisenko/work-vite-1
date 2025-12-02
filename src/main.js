@@ -1,11 +1,23 @@
-import { foo } from "./foo.js";
 import "./style.css";
-import { userName } from "./userName.js";
+import { users } from "./userName";
+import { renderUsers } from "./foo";
 
-const wrap = document.querySelector("#app");
-// console.log(wrap);
-console.log(foo());
+const form = document.querySelector("#addUserForm");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const input = document.querySelector("#newUserName");
 
-wrap.innerHTML = foo();
-console.log(foo());
-// console.log(userName);
+  users.push(input.value.trim());
+  input.value = "";
+  renderUsers();
+});
+
+const searchInput = document.querySelector("#search");
+searchInput.addEventListener("input", (e) => {
+  const filtered = users.filter((u) =>
+    u.toLowerCase().includes(e.target.value.toLowerCase())
+  );
+  renderUsers(filtered);
+});
+
+renderUsers();

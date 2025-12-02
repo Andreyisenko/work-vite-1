@@ -1,1 +1,1 @@
-export const userName = ["vasia", "koko", "fort"];
+export const users = ["vasia", "koko", "fort"];
